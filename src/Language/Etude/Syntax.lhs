@@ -20,10 +20,10 @@ Etude - Abstract Syntax
 > import qualified Data.Map as Map
 
 > data Term nu =
->     RET (Tail nu)                  -- ^ lifted atoms
+>     RET (Tail nu)                     -- ^ lifted atoms
 >   | LET (Bindings nu) (Term nu)       -- ^ monadic bindings
 >   | LETREC (Functions nu) (Term nu)   -- ^ recursive (lazy) bindings
->   | IF (Atom nu) (Term nu) (Term nu)  -- ^ conditional expressions
+>   | IF (Atom nu) (Term nu) (Term nu)  -- ^ conditional expression
 >   deriving (Eq, Ord)
 
 > type Terms nu = List (Term nu)
@@ -59,8 +59,8 @@ Etude - Abstract Syntax
 > prettyTail (CALL a as) = prettyAtom a <> parens (prettyAtoms as)
 
 > data Atom nu =
->   VAR nu			-- ^ variables
->   | IMM Integer               -- ^ constants
+>   VAR nu			-- ^ variable
+>   | IMM Integer               -- ^ constant
 >   deriving (Eq, Ord)
 
 > type Atoms nu = List (Atom nu)
