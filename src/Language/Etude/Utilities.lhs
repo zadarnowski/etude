@@ -18,7 +18,3 @@ Etude - Utilities
 
 > showForeign :: Show a => a -> ShowS
 > showForeign = showsPrec 11
-
-> indent :: String -> ShowS -> ShowS
-> indent p s = showString (concat (intersperse ('\n':p) (lines (s "\n"))))
-
