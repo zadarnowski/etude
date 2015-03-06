@@ -7,7 +7,7 @@ Etude - Abstract Syntax
 > {-# LANGUAGE OverloadedStrings #-}
 
 > module Language.Etude.Syntax (
->   Term (..), Terms,
+>   Term (..),
 >   Tail (..),
 >   Atom (..), Atoms,
 >   Binding (..), Bindings,
@@ -25,8 +25,6 @@ Etude - Abstract Syntax
 >   | LETREC (Functions nu) (Term nu)   -- ^ recursive (lazy) bindings
 >   | IF (Atom nu) (Term nu) (Term nu)  -- ^ conditional expression
 >   deriving (Eq, Ord)
-
-> type Terms nu = List (Term nu)
 
 > instance Show nu => Show (Term nu) where
 >   showsPrec p = showsPrec p . prettyTerm
